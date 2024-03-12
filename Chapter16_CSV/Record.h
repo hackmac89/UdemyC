@@ -35,7 +35,7 @@ value_pair_t *create_pairs(const size_t num_pairs);
 
 void free_pairs(value_pair_t *pairs);
 
-records_t *create_records();
+records_t *create_records(void);
 
 void free_records(records_t *records);
 

@@ -22,7 +22,7 @@ void free_pairs(value_pair_t *pairs)
     free(pairs);
 }
 
-records_t *create_records()
+records_t *create_records(void)
 {
     records_t *records = (records_t *)malloc(sizeof(records_t));
 

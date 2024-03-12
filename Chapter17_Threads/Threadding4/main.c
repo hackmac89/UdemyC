@@ -18,7 +18,7 @@ void *function(void *args)
     pthread_exit((void *)(result));
 }
 
-int main()
+int main(int argc, char **argv)
 {
     pthread_t threads[NUM_THREADS];
 
@@ -44,7 +44,7 @@ int main()
 
     for (int32_t i = 0; i < NUM_THREADS; ++i)
     {
-        printf("Result1: %d\n", *results[i]);
+        printf("Result %d: %d\n", i + 1, *results[i]);
     }
 
     return 0;

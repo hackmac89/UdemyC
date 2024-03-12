@@ -3,9 +3,9 @@
 
 #include "Lib.h"
 
-char PROJECT_DIR[] = "C:/Users/Jan/OneDrive/_Coding/UdemyC/";
+char PROJECT_DIR[] = "/Users/jwagner3/Development/C/Udemy/UdemyC/";
 
-int main()
+int main(int argc, char **argv)
 {
     char input_filepath[100] = {'\0'};
     strncpy(input_filepath, PROJECT_DIR, 100);
@@ -27,10 +27,7 @@ int main()
 
     fclose(fp);
 
-    for (unsigned int i = 0; i < v1.length; i++)
-    {
-        printf("%d\n", v1.data[i]);
-    }
+    printVector(&v1);
 
     freeArray(v1.data);
 

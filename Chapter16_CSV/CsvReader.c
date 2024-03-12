@@ -9,7 +9,7 @@
 #define BUFFER_SIZE (size_t)(128)
 #define NEW_LINE_CHARACTER_ASCII ('\n')
 
-size_t line_count(const char *const file_path)
+static size_t line_count(const char *const file_path)
 {
     FILE *const fp = fopen(file_path, "r");
 

@@ -2,9 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Vector; // { }
-
-// typedef
+typedef struct Vector {
+    int *data;
+    unsigned int length;
+} Vector;
 
 int *createArray(unsigned int length, int value)
 {
@@ -33,39 +34,69 @@ int *freeArray(int *array)
     return NULL;
 }
 
-
-float meanArray(int *array, unsigned int length)
+float meanVector(Vector *vector)
 {
+    int sum = 0;
 
+    for (uint64_t i = 0; i < vector->length; i++)
+        sum += vector->data[i];
+
+   return (float)(sum) / (float)(vector->length);
 }
 
-int minArray(int *array, unsigned int length)
+int minVector(Vector *vector)
 {
+    if (vector->length == 0 || vector == NULL || vector->data == NULL)
+    {
+        return INT32_MIN;
+    }
 
+    int current_min = vector->data[0];
+
+    for (u_int64_t i = 0; i < vector->length; i++) {
+        if (vector->data[i] < current_min)
+            current_min = vector->data[i];
+    }
+
+    return current_min;
 }
 
-int maxArray(int *array, unsigned int length)
+int maxVector(Vector *vector)
 {
+    if (vector->length == 0 || vector == NULL || vector->data == NULL)
+    {
+        return INT32_MIN;
+    }
 
+    int current_max = vector->data[0];
+
+    for (u_int64_t i = 0; i < vector->length; i++) {
+        if (vector->data[i] > current_max)
+            current_max = vector->data[i];
+    }
+
+    return current_max;
 }
 
-void printArray(int *array, unsigned int length)
+void printVector(Vector *vector)
 {
-    if (NULL == array)
+    if (vector->data == NULL)
     {
         return;
     }
 
-    for (unsigned int i = 0; i < length; i++)
+    for (unsigned int i = 0; i < vector->length; i++)
     {
-        printf("%d\n", array[i]);
+        printf("%d\n", vector->data[i]);
     }
 }
 
-int main()
+int main(int argc, char **argv)
 {
     Vector v1 = {.data = createArray(3, 1), .length = 3};
-    v1.data[1] = 2;
+    v1.data[0] = 10;
+    v1.data[1] = -10;
+    v1.data[2] = 100;
 
     printVector(&v1);
 
@@ -76,6 +107,8 @@ int main()
     printf("Max: %d\n", max_v1);
     printf("Min: %d\n", min_v1);
     printf("Mean: %f\n", mean_v1);
+
+    freeArray(v1.data);
 
     return 0;
 }

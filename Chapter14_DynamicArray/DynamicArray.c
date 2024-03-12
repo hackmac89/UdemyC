@@ -50,7 +50,7 @@ void expandDynamicArray(dynamic_array_t *array)
 
 void shrinkDynamicArray(dynamic_array_t *array)
 {
-    array->capacity /= SHIRNK_FACTOR;
+    array->capacity /= SHRINK_FACTOR;
     array->data = realloc(array->data, array->capacity * sizeof(float));
 }
 
@@ -71,7 +71,7 @@ float popValue(dynamic_array_t *array)
     array->data[index] = 0.0F;
     array->length--;
 
-    if (array->length < array->capacity / SHIRNK_FACTOR)
+    if (array->length < array->capacity / SHRINK_FACTOR)
         shrinkDynamicArray(array);
 
     return value;
@@ -79,7 +79,7 @@ float popValue(dynamic_array_t *array)
 
 void clearDynamicArray(dynamic_array_t *array)
 {
-    if (NULL == array || array->data == NULL)
+    if (NULL == array || NULL == array->data)
         return;
 
     free(array->data);

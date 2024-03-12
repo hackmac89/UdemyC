@@ -7,7 +7,7 @@
 
 #define INIT_CAPACITY (unsigned int)(10U)
 #define GROWTH_FACTOR (unsigned int)(2U)
-#define SHIRNK_FACTOR (unsigned int)(2U)
+#define SHRINK_FACTOR (unsigned int)(2U)
 
 typedef struct dynamic_array
 {

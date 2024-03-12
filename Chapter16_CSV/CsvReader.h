@@ -7,7 +7,7 @@
 
 /* DECLARATIONS */
 
-size_t line_count(const char *const file_path);
+static size_t line_count(const char *const file_path);
 
 void read_simple_csv(const char *const file_path, records_t *const records);
 

@@ -8,7 +8,7 @@
 #define FILE_LEN (size_t)(128)
 
 #define DEFAULT_PROJECT_PATH                                                   \
-    "C:/Users/Jan/OneDrive/_Coding/UdemyC/Chapter16_SimpleCSVReader/"
+    "/Users/jwagner3/Development/C/Udemy/UdemyC/Chapter16_CSV/"
 #define DEFAULT_INPUT_FILENAME "data_in.csv"
 #define DEFAULT_OUTPUT_FILENAME "data_out.csv"
 

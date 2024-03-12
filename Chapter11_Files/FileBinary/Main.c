@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char PROJECT_DIR[] = "C:/Users/Jan/OneDrive/_Coding/UdemyC/";
+char PROJECT_DIR[] = "/Users/jwagner3/Development/C/Udemy/UdemyC/";
 
 typedef struct
 {
@@ -17,6 +17,7 @@ void print_data(Data *data)
 int main()
 {
     Data data = {.a = 42, .b = 22.3f};
+    printf("Data 1: ");
     print_data(&data);
 
     /////// WRITE
@@ -52,7 +53,8 @@ int main()
     fread(&data2, sizeof(Data), 1, fp_in);
     fclose(fp_in);
 
-    print_data(&data);
+    printf("Data 2: ");
+    print_data(&data2);
 
     return 0;
 }

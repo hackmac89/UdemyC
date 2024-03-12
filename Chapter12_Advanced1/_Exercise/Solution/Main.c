@@ -17,7 +17,7 @@ int comp(const void *elem1, const void *elem2)
 
 int main(int argc, char *argv[])
 {
-    if (argc == 1)
+    if (argc != 3)
     {
         printf("You have to enter 3 args!\n");
         return 1;
@@ -50,4 +50,5 @@ int main(int argc, char *argv[])
         fprintf(fp, "%d\n", data[i]);
         printf("%d\n", data[i]);
     }
+    fclose(fp);
 }
